@@ -1,0 +1,50 @@
+/* Add this to your CSS */
+
+/* Add this to your CSS file or <style> tag */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  border: 4px solid #f3f3f3; /* Light gray */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.sidebar {
+  flex: 0 0 25%; /* Fixed width for the sidebar */
+  position: sticky;
+  top: 80px; /* Stick the sidebar below the search bar */
+  max-height: calc(100vh - 100px); /* Allow scrolling for long filter lists */
+  overflow-y: auto;
+}
+
+.jobs-section {
+  flex: 1; /* Take the remaining space */
+  overflow-y: auto; /* Enable scrolling within the jobs section */
+  height: calc(100vh - 100px); /* Fit to viewport height */
+  padding-left: 16px; /* Add some space between the jobs list and the sidebar */
+}
+
+.search-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  padding: 16px;
+}
