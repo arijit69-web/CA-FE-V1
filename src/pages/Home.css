@@ -21,9 +21,9 @@
 }
 
 .container {
-  display: flex;
+  
   flex-direction: row;
-  gap: 16px;
+  gap: 0;
 }
 
 .sidebar {

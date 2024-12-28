@@ -2,6 +2,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
+
 import { AuthContext } from "../context/AuthProvider";
 import './Banner.css'
 const Navbar = () => {
@@ -24,20 +25,32 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const navItems = [
+    {
+      path: "/",
+      title: "Home"
+    },
+    {
+      path: "/jobs",
+      title: "Jobs"
+    },
+    {
+      path: "/about",
+      title: "About"
+    }
 
   ];
   return (
-    <header className="max-w-screen  mx-auto xl:px-24 px-4 fixed top-0 left-0 right-0 bg-white z-50 ">
-      <nav className="flex justify-between items-center py-1.5 navbar">
-        <a className="flex items-center gap-2 text-2xl text-black" href="/">
-          <img src="./logo.png" alt="logo" height={45} width={45} />
-          <span>Arrow Jobs</span>   &nbsp;  <span className="powered-by">by- Coding Arrow</span>
+    <header className="max-w-screen  mx-auto xl:px-24 px-4 fixed top-0 left-0 right-0 bg-black z-50 ">
+      <nav className="flex justify-between  items-center py-1.5 navbar">
+        <a className="flex  items-center gap-2  text-2xl text-black" href="/">
+          <img src="./logo2.png" alt="logo" height={10} width={120} />
+          &nbsp;  <span className="powered-by">by- Coding Arrow</span>
         </a>
 
         {/* nav items */}
-        <ul className="hidden md:flex gap-12">
+        <ul className="hidden md:flex  gap-12">
           {navItems.map(({ path, title }) => (
-            <li key={path} className="text-base text-primary">
+            <li key={path} className="text-base text-white">
               <NavLink
                 to={path}
                 className={({ isActive }) => (isActive ? "active" : "")}
@@ -47,6 +60,9 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <div>
+
+        </div>
 
 
 
@@ -55,11 +71,11 @@ const Navbar = () => {
           <button onClick={handleMenuToggler}>
             {isMenuOpen ? (
               <>
-                <FaXmark className="w-5 h-5 text-primary/75" />
+                <FaXmark className="w-5 h-5 text-white" />
               </>
             ) : (
               <>
-                <FaBarsStaggered className="w-5 h-5 text-primary/75" />
+                <FaBarsStaggered className="w-5 h-5 text-white/75" />
               </>
             )}
           </button>
@@ -87,9 +103,7 @@ const Navbar = () => {
             </li>
           ))}
 
-          <li className="text-white py-1">
-            <Link to="login">Log in</Link>
-          </li>
+
         </ul>
       </div>
     </header>

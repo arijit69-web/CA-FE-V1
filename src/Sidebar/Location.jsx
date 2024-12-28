@@ -7,10 +7,10 @@ const Location = ({ handleChange }) => {
 
   const locationOptions = [
     { value: "", label: "All" },
-    { value: "london", label: "London" },
-    { value: "seattle", label: "Seattle" },
-    { value: "madrid", label: "Madrid" },
-    { value: "boston", label: "Boston" },
+    { value: "gurgaon", label: "gurgaon" },
+    { value: "bengaluru", label: "Bengaluru" },
+    { value: "hyderabad", label: "hyderabad" },
+    { value: "mumbai", label: "mumbai" },
   ];
 
   const handleSelect = (value, label) => {

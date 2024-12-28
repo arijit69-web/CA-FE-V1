@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Banner from "../components/Banner";
 import Signup from "../pages/Signup";
+import AboutPage from "../pages/AboutPage";
 
 const router = createBrowserRouter([
   {
@@ -22,10 +23,13 @@ const router = createBrowserRouter([
         element: <Banner />,
       },
       {
-        path: "/home",
+        path: "/jobs",
         element: <Home />,
       },
-
+      {
+        path: "/about",
+        element: <AboutPage />
+      }
 
 
     ],

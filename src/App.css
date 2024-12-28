@@ -3,6 +3,37 @@
 body {
   font-family: "DM Sans", sans-serif;
 }
+/* App.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%; /* Ensures the React app takes full height */
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Makes the app container take the full height */
+}
+
+.content {
+  flex: 1; /* Pushes the footer to the bottom if content is short */
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
 .powered-by {
   padding-top: 10px;
   justify-content: baseline;
@@ -14,13 +45,12 @@ body {
 }
 
 .active {
-  color: #228b22;
+  color: #098564;
   font-weight: 500;
 }
 
 a {
   text-decoration: none;
-  color: rgb(97, 97, 97);
 }
 
 li {
@@ -40,7 +70,6 @@ li {
 /* jobs page */
 
 .card {
-  width: 70%;
   margin: 20px;
   border: 2px solid #ededed;
   border-radius: 10px;

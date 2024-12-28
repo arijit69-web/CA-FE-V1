@@ -1,0 +1,88 @@
+/* Navbar Styles */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  z-index: 50;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 20px;
+}
+
+.nav-items {
+  color: #045841;
+  display: flex;
+  gap: 4rem;
+  padding-right: 40rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #045841;
+}
+
+.nav-link.active {
+  color: #045841;
+}
+
+.mobile-menu-icon {
+  cursor: pointer;
+  color: white;
+}
+
+.logout-button {
+  background: #045841;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #34d399;
+}
+
+.mobile-menu {
+  display: block;
+  padding: 16px;
+  background-color: #000;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.nav-link-mobile {
+  color: white;
+  padding: 12px;
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link-mobile:hover {
+  color: #4ade80;
+}
