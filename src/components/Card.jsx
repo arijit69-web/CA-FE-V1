@@ -41,14 +41,11 @@ const Card = ({ data }) => {
                 <FiClock /> {employmentType}
               </span>
               <span className="flex items-center gap-2 font-bold">
-                &#8377; {minPrice - { maxPrice }}
+                &#8377; {minPrice}Lpa - {maxPrice}Lpa
               </span>
-              {postingDate && (
-                <span className="flex items-center gap-2">
-                  <FiCalendar /> {postingDate}
-                </span>
-              )}
-
+              <span className="flex items-center gap-2">
+                <FiCalendar /> {postingDate}
+              </span>
             </div>
           </div>
           {/* Apply Button */}
