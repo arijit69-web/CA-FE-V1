@@ -139,10 +139,10 @@ const Home = () => {
           </div>
 
           {/* Jobs Section */}
-          <div className="flex-1 pt-14 sm:pt-14 md:pt-8 lg:pt-9 flex flex-col">
+          <div className="flex-1  pt-11 sm:pt-14 md:pt-8 lg:pt-9 flex flex-col">
             {/* Search Bar Section */}
-            <div className="bg-gray-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl mx-4 p-6 shadow-lg">
-              <div className="flex flex-row gap-4 items-center">
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl mx-1 py-4 px-2 lg:p-6 shadow-lg">
+              <div className="flex flex-row gap-1 items-center justify-evenly">
                 {/* Sidebar Toggle */}
                 <button
                   onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -152,9 +152,9 @@ const Home = () => {
                 </button>
 
                 {/* Search Form */}
-                <form className="flex flex-1 flex-row gap-4 lg:w-[70%]">
+                <form className="flex flex-1 flex-row gap-1 lg:w-[70%]">
                   <div className="flex-1 relative">
-                    <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-2 flex items-center pointer-events-none">
                       <FiBriefcase className="w-5 h-5 text-emerald-400" />
                     </div>
                     <input
