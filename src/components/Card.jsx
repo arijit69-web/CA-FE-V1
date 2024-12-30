@@ -22,7 +22,7 @@ const Card = ({ data }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 via-transparent to-teal-600/20 opacity-0 group-hover:opacity-100 backdrop-blur-md rounded-xl transition-opacity duration-500 pointer-events-none"></div>
 
         <Link
-          className="relative flex flex-col sm:flex-row 2 items-start w-full group"
+          className="relative flex flex-col sm:flex-row gap-2 lg:gap-6 items-start w-full group"
           to={jobUrl}
           target="_blank"
           rel="noopener noreferrer"
