@@ -113,122 +113,130 @@ const Home = () => {
   const result = filteredData(jobs, selectedCategory, query);
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50 sm:pt-[1%]  md:pt-[3%] lg:pt-[5vh]  xl:pt-[5vh]">
-      {/* Content Section */}
-      <div className="flex-grow flex overflow-hidden xl:pt-[0vh] lg:pt-[0%]">
-        {/* Sidebar */}
-        <div
-          className={`fixed  sm:top-0 md:top-5 lg:top-2 xl:pt:0 left-0 h-full bg-white shadow-lg z-20 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-            } sm:relative sm:translate-x-0 sm:w-1/4`}
-        >
-          <div className="relative p-4 pt-20 flex justify-end items-end sm:hidden">
-
-            <button
-              onClick={() => setIsSidebarOpen(false)}
-              className="text-gray-500 hover:text-gray-700"
-            >
-              <FiX size={24} />
-            </button>
-          </div>
-          <Sidebar
-            handleChange={handleChange}
-            handleClick={handleClick}
-            setIsSidebarOpen={setIsSidebarOpen}
-          />
-        </div>
-
-        {/* Jobs Section */}
-        <div className="flex-1 pt-14 sm:pt-14 md:pt-8 lg:pt-4  flex flex-col">
-          <div className="bg-white shadow-sm p-4">
-            <div className="flex flex-row gap-2 items-center">
-              {/* Sidebar Toggle */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      {/* Main Content Container */}
+      <div className="flex flex-col h-screen pt-4 lg:pt-6">
+        {/* Content Section */}
+        <div className="flex-grow flex overflow-hidden">
+          {/* Sidebar */}
+          <div
+            className={`fixed sm:top-0 md:top-5 lg:top-2 left-0 h-full bg-gray-900 border-r border-emerald-500/20 shadow-xl z-20 transition-transform transform ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+              } sm:relative sm:translate-x-0 sm:w-1/4`}
+          >
+            <div className="relative p-4 pt-20 flex justify-end items-end sm:hidden">
               <button
-                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                className="p-2 bg-gray-100 rounded-lg sm:hidden"
+                onClick={() => setIsSidebarOpen(false)}
+                className="text-emerald-400 hover:text-emerald-300 transition-colors"
               >
-                <FiMenu size={24} />
+                <FiX size={24} />
               </button>
-              {/* Search Section */}
-              <form className="flex flex-row gap-2  lg:w-[70%] ">
-                <div className="flex-1 relative">
-                  <div className="absolute  inset-y-0 left-3 flex items-center pointer-events-none">
-                    <FiBriefcase className="w-5 h-5 text-gray-400" />
-                  </div>
-                  <input
-                    type="text"
-                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-100 focus:bg-white focus:ring-2 focus:ring-green-500 transition-all text-gray-700 placeholder-gray-400"
-                    placeholder="Search job title.."
-                    onChange={handleInputChange}
-                    value={query}
-                  />
-                </div>
-                <div className="flex-1 relative">
-                  <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                    <FiMapPin className="w-5 h-5 text-gray-400" />
-                  </div>
-                  <input
-                    type="text"
-                    className="w-full pl-10 pr-4 py-2 rounded-lg bg-gray-100 focus:bg-white focus:ring-2 focus:ring-green-500 transition-all text-gray-700 placeholder-gray-400"
-                    placeholder="Location..."
-                    onChange={handleLocationChange}
-                    value={locationQuery}
-                  />
-                </div>
-              </form>
-              {/* Available Jobs Text */}
-              <div className="text-gray-600 text-sm whitespace-nowrap">
-                {isLoading ? "Loading jobs..." : `${filteredItems.length} Jobs`}
-              </div>
             </div>
+            <Sidebar
+              handleChange={handleChange}
+              handleClick={handleClick}
+              setIsSidebarOpen={setIsSidebarOpen}
+            />
           </div>
-          {/* job cards */}
-          {isLoading ? (
-            <div className="flex-grow flex justify-between items-center">
-              <div className="loading-spinner"></div>
-            </div>
-          ) : result.length > 0 ? (
-            <div className="flex-grow  w-[100%] overflow-y-auto ">
-              <div className="space-y-4">
-                <Jobs result={result} />
-              </div>
-            </div>
-          ) : (
-            <div className="flex-grow flex items-center justify-center">
-              <div className="max-w-md text-center">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  No Jobs Found
-                </h3>
-                <p className="text-gray-600">
-                  We couldn't find any jobs matching your search criteria. Try adjusting your filters or search terms.
-                </p>
-              </div>
-            </div>
-          )}
 
-          {/* Pagination */}
-          <div className="bg-white shadow-sm p-2 flex justify-center items-center">
-            <button
-              onClick={prevPage}
-              disabled={currentPage === 1}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Previous
-            </button>
-            <span className="text-sm text-gray-600 px-4">
-              Page {currentPage} of {Math.ceil(filteredItems.length / itemsPerPage)}
-            </span>
-            <button
-              onClick={nextPage}
-              disabled={currentPage === Math.ceil(filteredItems.length / itemsPerPage)}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Next
-            </button>
+          {/* Jobs Section */}
+          <div className="flex-1 pt-14 sm:pt-14 md:pt-8 lg:pt-9 flex flex-col">
+            {/* Search Bar Section */}
+            <div className="bg-gray-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl mx-4 p-6 shadow-lg">
+              <div className="flex flex-row gap-4 items-center">
+                {/* Sidebar Toggle */}
+                <button
+                  onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                  className="p-2 bg-gray-800 hover:bg-gray-700 rounded-lg sm:hidden transition-colors"
+                >
+                  <FiMenu size={24} className="text-emerald-400" />
+                </button>
+
+                {/* Search Form */}
+                <form className="flex flex-1 flex-row gap-4 lg:w-[70%]">
+                  <div className="flex-1 relative">
+                    <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                      <FiBriefcase className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <input
+                      type="text"
+                      className="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-800 border border-emerald-500/20 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all text-gray-100 placeholder-gray-400 text-sm"
+                      placeholder="Search job title..."
+                      onChange={handleInputChange}
+                      value={query}
+                    />
+                  </div>
+                  <div className="flex-1 relative">
+                    <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                      <FiMapPin className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <input
+                      type="text"
+                      className="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-800 border border-emerald-500/20 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/50 transition-all text-gray-100 placeholder-gray-400 text-sm"
+                      placeholder="Location..."
+                      onChange={handleLocationChange}
+                      value={locationQuery}
+                    />
+                  </div>
+                </form>
+
+                {/* Job Count */}
+                <div className="text-emerald-400 text-sm font-medium whitespace-nowrap">
+                  {isLoading ? "Loading jobs..." : `${filteredItems.length} Jobs`}
+                </div>
+              </div>
+            </div>
+
+            {/* Results Section */}
+            {isLoading ? (
+              <div className="flex-grow flex justify-center items-center">
+                <div className="w-8 h-8 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin"></div>
+              </div>
+            ) : result.length > 0 ? (
+              <div className="flex-grow w-full overflow-y-auto px-4">
+                <div className="space-y-8 py-6">
+                  <Jobs result={result} />
+                </div>
+              </div>
+            ) : (
+              <div className="flex-grow flex items-center justify-center px-4">
+                <div className="max-w-md text-center p-8 bg-gray-900/50 backdrop-blur-sm border border-emerald-500/20 rounded-xl">
+                  <h3 className="text-xl font-semibold text-emerald-400 mb-2">
+                    No Jobs Found
+                  </h3>
+                  <p className="text-gray-300">
+                    We couldn't find any jobs matching your search criteria. Try adjusting your filters or search terms.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* Pagination */}
+            <div className="  mb-1 p-2 flex justify-center items-center gap-4">
+              <button
+                onClick={prevPage}
+                disabled={currentPage === 1}
+                className="px-4 py-2 text-sm font-medium text-emerald-400 bg-gray-800 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors border border-emerald-500/20"
+              >
+                Previous
+              </button>
+              <span className="text-sm text-emerald-400 font-medium">
+                Page {currentPage} of {Math.ceil(filteredItems.length / itemsPerPage)}
+              </span>
+              <button
+                onClick={nextPage}
+                disabled={currentPage === Math.ceil(filteredItems.length / itemsPerPage)}
+                className="px-4 py-2 text-sm font-medium text-emerald-400 bg-gray-800 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors border border-emerald-500/20"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
+
+
 };
 
 export default Home;

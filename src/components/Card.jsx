@@ -1,10 +1,9 @@
-import { FiCalendar, FiClock, FiDollarSign, FiMapPin } from "react-icons/fi";
+import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Card = ({ data }) => {
   const {
-    _id,
     companyLogo,
     jobTitle,
     companyName,
@@ -17,49 +16,78 @@ const Card = ({ data }) => {
   } = data;
 
   return (
-    <div className="w-full lg:w-[70%] p">
-      <section className="card   bg-white rounded-lg  shadow-sm p-1 flex flex-col sm:flex-row ">
-        <Link className="flex flex-col sm:flex-row gap-4 items-start w-full">
-          {/* Logo */}
-          <div className="flex-shrink-0 w-20 h-20 rounded-md overflow-hidden">
+    <div className="w-full lg:w-[85%] mx-auto py-4">
+      <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl shadow-lg transition-shadow duration-300 p-6 border border-gray-700 overflow-hidden group hover:shadow-xl">
+        {/* Frosted Glass Effect on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 via-transparent to-teal-600/20 opacity-0 group-hover:opacity-100 backdrop-blur-md rounded-xl transition-opacity duration-500 pointer-events-none"></div>
+
+        <Link
+          className="relative flex flex-col sm:flex-row gap-6 items-start w-full group"
+          to={jobUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* Company Logo */}
+          <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden bg-white p-3 border border-gray-700 shadow-md">
             <img
               src={companyLogo}
-              alt={jobTitle}
+              alt={companyName}
               className="w-full h-full object-contain"
             />
           </div>
-          {/* Job Details */}
-          <div className="flex-grow flex flex-col">
-            <h4 className="text-primary mb-1 font-medium">{companyName}</h4>
-            <h3 className="text-lg font-semibold mb-2">{jobTitle}</h3>
 
-            <div className="text-primary/70 text-base flex flex-wrap gap-2 mb-2">
-              <span className="flex items-center gap-2">
-                <FiMapPin /> {jobLocation}
-              </span>
-              <span className="flex items-center gap-2">
-                <FiClock /> {employmentType}
-              </span>
-              <span className="flex items-center gap-2 font-bold">
-                &#8377; {minPrice}Lpa - {maxPrice}Lpa
-              </span>
-              <span className="flex items-center gap-2">
-                <FiCalendar /> {postingDate}
-              </span>
+          {/* Job Details */}
+          <div className="flex-grow space-y-3">
+            {/* Title and Salary Section */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-emerald-500 transition-colors">
+                  {jobTitle}
+                </h3>
+                <h4 className="text-sm text-gray-400 font-medium">{companyName}</h4>
+              </div>
+
+              {/* Salary Badge */}
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-gray-900 font-medium text-sm border border-gray-600 shadow-sm">
+                ₹{minPrice} - {maxPrice} LPA
+              </div>
+            </div>
+
+            {/* Job Metadata */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <FiMapPin className="text-emerald-400" />
+                <span>{jobLocation}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FiClock className="text-emerald-400" />
+                <span>{employmentType}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FiCalendar className="text-emerald-400" />
+                <span>Posted: {postingDate}</span>
+              </div>
             </div>
           </div>
+
           {/* Apply Button */}
-          <div className="flex-shrink-0 mt-0 sm:mt-0">
+          <div className="flex-shrink-0 mt-4 sm:mt-0">
             <button
-              onClick={() => window.open(jobUrl, "_blank", "noopener,noreferrer")}
-              className="inline-flex items-center text-white bg-zinc-700 hover:bg- px-4 py-2 rounded-md text-center"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(jobUrl, "_blank", "noopener,noreferrer");
+              }}
+              className="group relative px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden"
             >
-              <FaExternalLinkAlt className="mr-2" />
-              Apply
+              <span className="relative z-10 flex items-center gap-2">
+                Apply Now
+                <FaExternalLinkAlt className="text-sm group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
           </div>
         </Link>
-      </section>
+      </div>
     </div>
   );
 };
