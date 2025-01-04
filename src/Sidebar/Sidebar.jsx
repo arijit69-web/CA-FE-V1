@@ -66,7 +66,7 @@ const Sidebar = ({ handleChange, handleClick }) => {
   };
 
   return (
-    <div className="h-[calc(100vh-2rem)] overflow-y-auto p-4 bg-gradient-to-br lg:pt-14 from-gray-900 via-black to-gray-900 text-emerald-300">
+    <div className="h-[calc(100vh-2rem)] overflow-y-auto p-4 lg:pt-14 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-emerald-300">
       <div className="space-y-6">
         <h3 className="text-xl font-bold mb-4 text-emerald-500">Filters</h3>
         {Object.keys(options).map((key) => (
