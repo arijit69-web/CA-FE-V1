@@ -34,18 +34,18 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="max-w-screen mx-auto xl:px-24 px-4 fixed top-0 left-0 right-0 bg-black z-50">
+    <header className="max-w-screen mx-auto xl:px-24 px-4 fixed top-0 left-0 right-0 bg-slate-950 z-50">
       <nav className="flex items-center py-1.5 navbar">
         {/* Logo Section */}
         <div className="flex-shrink-0">
           <a className="flex items-center gap-2 text-2xl text-black" href="/">
-            <img src="./logo2.png" alt="logo" height={10} width={120} />
+            <img src="./CA.png" alt="logo" height={12} width={140} />
             <span className="powered-by">by- Coding Arrow</span>
           </a>
         </div>
 
         {/* Main Navigation - Center */}
-        <ul className="hidden md:flex items-center gap-8 mx-auto">
+        <ul className="hidden md:flex items-center gap-10 mx-auto ml-48 md:ml-32  ">
           {mainNavItems.map(({ path, title }) => (
             <li key={path} className="text-base text-white">
               <NavLink
@@ -61,7 +61,7 @@ const Navbar = () => {
         {/* Auth Navigation - Right */}
         <ul className="hidden md:flex items-center gap-6">
           {authNavItems.map(({ path, title }) => (
-            <li key={path} className="text-base text-white">
+            <li key={path} className="text-base text-white ">
               <NavLink
                 to={path}
                 className={({ isActive }) => (isActive ? "active" : "")}
