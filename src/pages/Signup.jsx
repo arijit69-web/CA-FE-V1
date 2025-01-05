@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, Github, Laptop, Lock, Mail, User } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export default function SignUp() {
     const [loading, setLoading] = useState(false);
@@ -17,34 +18,17 @@ export default function SignUp() {
             {/* Left Column - Image/Design */}
             <div className="hidden lg:block w-1/2 bg-gradient-to-br from-black via-gray-900 to-emerald-900">
                 <div className="h-full flex items-center justify-center p-12">
-                    <div className="grid grid-cols-2 gap-4 max-w-2xl">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 0.2 }}
-                            className="bg-emerald-500/10 backdrop-blur-sm p-8 rounded-2xl"
-                        >
-                            <h3 className="text-2xl font-bold text-white mb-2">
-                                Secure Platform
-                            </h3>
-                            <p className="text-gray-300">
-                                State-of-the-art security for your peace of mind
-                            </p>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.5, delay: 0.4 }}
-                            className="bg-emerald-500/10 backdrop-blur-sm p-8 rounded-2xl"
-                        >
-                            <h3 className="text-2xl font-bold text-white mb-2">
-                                Smart Features
-                            </h3>
-                            <p className="text-gray-300">
-                                Intelligent tools to enhance your experience
-                            </p>
-                        </motion.div>
-                    </div>
+                    {/* <div className="grid grid-cols-2 gap-4 max-w-2xl">
+
+                    </div> */}
+                    {/* Lottie Animation */}
+                    <Player
+                        autoplay
+                        loop
+                        src={"/cycle.json"} // Animation data file
+                        style={{ height: "100vh", width: "100vh" }}
+                    />
+
                 </div>
             </div>
 
