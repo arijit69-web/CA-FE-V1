@@ -59,13 +59,7 @@ const AboutPage = () => {
                             <div className="absolute top-[20%] left-[30%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
                             <div className="absolute top-[60%] left-[60%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
 
-                            {/* Animated Lines */}
-                            <div className="absolute inset-0 opacity-30">
-                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[10%] animate-[moveX_15s_linear_infinite]"></div>
-                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[30%] animate-[moveX_20s_linear_infinite]"></div>
-                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[50%] animate-[moveX_25s_linear_infinite]"></div>
-                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[70%] animate-[moveX_30s_linear_infinite]"></div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
