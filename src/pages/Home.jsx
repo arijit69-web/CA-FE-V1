@@ -3,7 +3,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import Jobs from "./Jobs";
 import Card from "../components/Card";
 import { FiMapPin, FiSearch, FiBriefcase, FiMenu, FiX } from "react-icons/fi";
-import 'Home.css'
+import './Home.css'
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
