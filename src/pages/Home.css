@@ -1,50 +1,11 @@
-/* Add this to your CSS */
-
-/* Add this to your CSS file or <style> tag */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Transparent scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-.loading-spinner {
-  border: 4px solid #f3f3f3; /* Light gray */
-  border-top: 4px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-  margin: auto;
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1); /* Transparent thumb */
+  border-radius: 4px;
 }
-
-.container {
-  
-  flex-direction: row;
-  gap: 0;
-}
-
-.sidebar {
-  flex: 0 0 25%; /* Fixed width for the sidebar */
-  position: sticky;
-  top: 80px; /* Stick the sidebar below the search bar */
-  max-height: calc(100vh - 100px); /* Allow scrolling for long filter lists */
-  overflow-y: auto;
-}
-
-.jobs-section {
-  flex: 1; /* Take the remaining space */
-  overflow-y: auto; /* Enable scrolling within the jobs section */
-  height: calc(100vh - 100px); /* Fit to viewport height */
-  padding-left: 16px; /* Add some space between the jobs list and the sidebar */
-}
-
-.search-bar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: white;
-  padding: 16px;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2); /* Hover effect */
 }
