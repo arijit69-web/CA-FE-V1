@@ -41,14 +41,14 @@ const Card = ({ data }) => {
             {/* Title and Salary Section */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 group-hover:text-emerald-500 transition-colors">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 group-hover:text-emerald-700 transition-colors">
                   {jobTitle}
                 </h3>
                 <h4 className="text-sm text-gray-500 font-medium">{companyName}</h4>
               </div>
 
               {/* Salary Badge */}
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 text-white font-medium text-sm border border-gray-300 shadow-sm">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-emerald-800 to-teal-900 text-white font-medium text-sm border border-gray-300 shadow-sm">
                 ₹{minPrice} - {maxPrice} LPA
               </div>
             </div>
@@ -56,15 +56,15 @@ const Card = ({ data }) => {
             {/* Job Metadata */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600">
               <div className="flex items-center gap-2">
-                <FiMapPin className="text-emerald-500" />
+                <FiMapPin className="text-slate-900" />
                 <span>{jobLocation}</span>
               </div>
               <div className="flex items-center gap-2">
-                <FiClock className="text-emerald-500" />
+                <FiClock className="text-slate-900" />
                 <span>{employmentType}</span>
               </div>
               <div className="flex items-center gap-2">
-                <FiCalendar className="text-emerald-500" />
+                <FiCalendar className="text-slate-900" />
                 <span>Posted: {postingDate}</span>
               </div>
             </div>
