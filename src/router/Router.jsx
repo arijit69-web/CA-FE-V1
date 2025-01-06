@@ -12,6 +12,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Banner from "../components/Banner";
 import Signup from "../pages/Signup";
 import AboutPage from "../pages/AboutPage";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <Home />,
+        element: <NotFound />,
       }
 
     ],
