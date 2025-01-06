@@ -66,14 +66,14 @@ const Sidebar = ({ handleChange, handleClick }) => {
   };
 
   return (
-    <div className="h-[calc(100vh-2rem)] overflow-y-auto p-4 lg:pt-14 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-emerald-300">
+    <div className="h-[calc(100vh-2rem)] overflow-y-auto p-4 lg:pt-14 bg-slate-950 text-emerald-300">
       <div className="space-y-6">
         <h3 className="text-xl font-bold mb-4 text-emerald-500">Filters</h3>
         {Object.keys(options).map((key) => (
-          <div key={key} className="border border-emerald-700 rounded-lg w-full">
+          <div key={key} className="border border-emerald-700 rounded-lg w-">
             <button
               onClick={() => toggleDropdown(key)}
-              className="w-full px-4 py-3 flex items-center justify-between hover:bg-emerald-900 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-4 py-3 flex items-center justify-between hover:bg-emerald-900 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               <h4 className="text-lg font-medium">{selectedOptions[key]}</h4>
               {isDropdownOpen[key] ? <ChevronUp /> : <ChevronDown />}
