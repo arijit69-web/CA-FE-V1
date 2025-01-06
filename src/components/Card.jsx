@@ -17,7 +17,7 @@ const Card = ({ data }) => {
 
   return (
     <div className="w-full lg:w-[85%] mx-auto py-4">
-      <div className="relative bg-white rounded-xl shadow-lg transition-shadow duration-300 p-6 border border-gray-200 overflow-hidden group hover:shadow-xl">
+      <div className="relative bg-gray-100 rounded-xl shadow-lg transition-shadow duration-300 p-6 border border-gray-200 overflow-hidden group hover:shadow-xl">
         {/* Frosted Glass Effect on Hover */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-transparent to-gray-200 opacity-0 group-hover:opacity-100 backdrop-blur-md rounded-xl transition-opacity duration-500 pointer-events-none"></div>
 
