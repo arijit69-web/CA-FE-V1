@@ -50,14 +50,14 @@ const AboutPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             {/* Hero Section with Particle Effect Background */}
-            <header className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-emerald-900 via-black to-emerald-900">
+            <header className="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[80vh] 2xl:min-h-[65vh] : flex items-center justify-center overflow-hidden bg-gradient-to-r from-emerald-900 via-black to-emerald-900">
+                {/* Animated Grid Background */}
                 <div className="absolute inset-0 overflow-hidden">
-                    {/* Animated Grid Background */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#1010104d_1px,transparent_1px),linear-gradient(to_bottom,#1010104d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]">
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-emerald-900/10">
                             {/* Glowing Orbs */}
-                            <div className="absolute top-[20%] left-[30%] w-32 h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
-                            <div className="absolute top-[60%] left-[60%] w-32 h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
+                            <div className="absolute top-[20%] left-[30%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
+                            <div className="absolute top-[60%] left-[60%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
 
                             {/* Animated Lines */}
                             <div className="absolute inset-0 opacity-30">
@@ -69,23 +69,27 @@ const AboutPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+
+                {/* Content Section */}
+                <div className="relative z-10 text-center max-w-4xl mx-auto px-4 md:px-8">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
                         Transforming Careers with
                         <span className="block bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
                             Arrow Jobs
                         </span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-emerald-200 font-light max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-emerald-200 font-light max-w-2xl mx-auto leading-relaxed">
                         Pioneering the future of job search with AI-driven solutions and intelligent career guidance
                     </p>
                     <div className="mt-8">
-                        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
-                            Get Started <ArrowRight className="w-5 h-5" />
+                        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+                            Get Started <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
                         </button>
                     </div>
                 </div>
             </header>
+
+
 
             {/* Stats Section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
