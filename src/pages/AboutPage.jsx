@@ -1,85 +1,271 @@
 import React from 'react';
+import { ArrowRight, Users, Briefcase, Trophy, Target, ChartBar, Globe, Shield, Clock, Zap, Phone, Mail } from 'lucide-react';
 
 const AboutPage = () => {
+    const stats = [
+        { number: "15K+", label: "Active Users", icon: Users },
+        { number: "8K+", label: "Partner Companies", icon: Briefcase },
+        { number: "95%", label: "Success Rate", icon: Trophy },
+        { number: "24/7", label: "Support", icon: Clock }
+    ];
+
+    const features = [
+        {
+            title: "AI-Powered Resume Optimization",
+            description: "Our advanced AI algorithms analyze your resume against industry standards and job requirements, ensuring maximum visibility to recruiters.",
+            icon: Target
+        },
+        {
+            title: "Smart Job Matching",
+            description: "Using machine learning, we match your profile with the most relevant opportunities, considering skills, experience, and career goals.",
+            icon: ChartBar
+        },
+        {
+            title: "Global Opportunities",
+            description: "Access jobs from around the world with our extensive network of international employers and recruitment partners.",
+            icon: Globe
+        },
+        {
+            title: "Secure Application Process",
+            description: "Your data is protected with enterprise-grade security while we handle your job applications automatically.",
+            icon: Shield
+        }
+    ];
+
+    const testimonials = [
+        {
+            quote: "Arrow Jobs transformed my job search experience. Their AI-powered platform helped me land my dream job within weeks!",
+            author: "Sarah Chen",
+            position: "Software Engineer",
+            company: "Tech Giants Inc."
+        },
+        {
+            quote: "As a hiring manager, Arrow Jobs has streamlined our recruitment process significantly. The quality of candidates is exceptional.",
+            author: "Michael Rodriguez",
+            position: "HR Director",
+            company: "Global Solutions Ltd."
+        }
+    ];
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-            <div className="pt-14">
-                <header className="relative overflow-hidden bg-gradient-to-r from-emerald-900 via-black to-emerald-900 py-16">
-                    <div className="relative z-10 text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
-                            About Arrow Jobs
-                        </h1>
-                        <p className="text-lg md:text-xl text-emerald-200 font-light">
-                            Redefining Job Search and Applications with AI
-                        </p>
-                    </div>
-                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtNi42MjcgMC0xMiA1LjM3My0xMiAxMnM1LjM3MyAxMiAxMiAxMiAxMi01LjM3MyAxMi0xMi01LjM3My0xMi0xMi0xMnptMCAxOGMtMy4zMTQgMC02LTIuNjg2LTYtNnMyLjY4Ni02IDYtNiA2IDIuNjg2IDYgNi0yLjY4NiA2LTYgNnoiIGZpbGw9IiMxMGIzODEiIG9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-10"></div>
-                </header>
+            {/* Hero Section with Particle Effect Background */}
+            <header className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-r from-emerald-900 via-black to-emerald-900">
+                <div className="absolute inset-0 overflow-hidden">
+                    {/* Animated Grid Background */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1010104d_1px,transparent_1px),linear-gradient(to_bottom,#1010104d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-emerald-900/10">
+                            {/* Glowing Orbs */}
+                            <div className="absolute top-[20%] left-[30%] w-32 h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
+                            <div className="absolute top-[60%] left-[60%] w-32 h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <section className="mb-20">
-                        <h2 className="text-3xl font-bold text-center text-white mb-8 relative">
-                            <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
-                                Who We Are
-                            </span>
-                        </h2>
-                        <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto text-center">
-                            At Arrow Jobs, we are revolutionizing the way job seekers find and apply for opportunities. Leveraging advanced Artificial Intelligence, we provide a unique platform that combines a job portal, resume maker, and auto-apply features to streamline your career journey.
-                        </p>
-                    </section>
-
-                    <section className="mb-20">
-                        <h2 className="text-3xl font-bold text-center text-white mb-12 relative">
-                            <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
-                                What We Do
-                            </span>
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {[
-                                {
-                                    title: "ATS-Optimized Resumes",
-                                    description: "We ensure your resumes are tailored to pass Applicant Tracking Systems, increasing your chances of getting noticed."
-                                },
-                                {
-                                    title: "Auto-Apply",
-                                    description: "Save time with our auto-apply feature, which applies to relevant job postings on your behalf."
-                                },
-                                {
-                                    title: "Data-Driven Insights",
-                                    description: "Receive personalized recommendations based on your profile and career goals."
-                                }
-                            ].map((card, index) => (
-                                <div
-                                    key={index}
-                                    className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-900 via-gray-900 to-black p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20"
-                                >
-                                    <div className="relative z-10">
-                                        <h3 className="text-xl font-bold text-white mb-4">{card.title}</h3>
-                                        <p className="text-gray-300">{card.description}</p>
-                                    </div>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-emerald-900/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    <section className="relative">
-                        <div className="relative z-10">
-                            <h2 className="text-3xl font-bold text-center text-white mb-8">
-                                <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
-                                    Why Choose Us?
-                                </span>
-                            </h2>
-                            <div className="bg-gradient-to-br from-emerald-900/50 via-gray-900/50 to-black/50 rounded-3xl p-8 backdrop-blur-sm">
-                                <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto text-center">
-                                    Our platform is designed with your success in mind. By focusing on ATS scores, personalized resume optimization, and seamless job applications, we make sure you stand out among the crowd. Trusted by 8k+ companies and used by 15k+ candidates, Arrow Jobs is your ultimate career partner.
-                                </p>
+                            {/* Animated Lines */}
+                            <div className="absolute inset-0 opacity-30">
+                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[10%] animate-[moveX_15s_linear_infinite]"></div>
+                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[30%] animate-[moveX_20s_linear_infinite]"></div>
+                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[50%] animate-[moveX_25s_linear_infinite]"></div>
+                                <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent top-[70%] animate-[moveX_30s_linear_infinite]"></div>
                             </div>
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-emerald-900/5 rounded-3xl"></div>
-                    </section>
+                    </div>
+                </div>
+                <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+                        Transforming Careers with
+                        <span className="block bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                            Arrow Jobs
+                        </span>
+                    </h1>
+                    <p className="text-xl md:text-2xl text-emerald-200 font-light max-w-2xl mx-auto leading-relaxed">
+                        Pioneering the future of job search with AI-driven solutions and intelligent career guidance
+                    </p>
+                    <div className="mt-8">
+                        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+                            Get Started <ArrowRight className="w-5 h-5" />
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            {/* Stats Section */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    {stats.map((stat, index) => {
+                        const Icon = stat.icon;
+                        return (
+                            <div key={index} className="bg-gradient-to-br from-gray-800 via-gray-900 to-black p-6 rounded-xl shadow-xl hover:shadow-emerald-500/10 transition-all duration-300">
+                                <div className="flex items-center gap-4">
+                                    <div className="bg-emerald-500/10 p-3 rounded-lg">
+                                        <Icon className="w-6 h-6 text-emerald-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-white">{stat.number}</h3>
+                                        <p className="text-gray-400">{stat.label}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
+
+            {/* Mission Section */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                            <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                                Our Mission & Vision
+                            </span>
+                        </h2>
+                        <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
+                            Arrow Jobs is dedicated to revolutionizing the job search experience through innovative technology and personalized solutions. We believe in creating meaningful connections between talented individuals and forward-thinking companies.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div className="bg-gradient-to-br  via-gray-900/30 to-black/30 p-8 rounded-2xl backdrop-blur-sm">
+                            <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
+                            <p className="text-gray-300 leading-relaxed">
+                                To empower job seekers with AI-driven tools and insights, making the job search process more efficient, effective, and accessible to everyone. We strive to bridge the gap between talent and opportunity through technology.
+                            </p>
+                        </div>
+                        <div className="bg-gradient-to-br  via-gray-900/30 to-black/30 p-8 rounded-2xl backdrop-blur-sm">
+                            <h3 className="text-2xl font-bold text-white mb-4">Our Vision</h3>
+                            <p className="text-gray-300 leading-relaxed">
+                                To become the world's leading AI-powered career platform, where every job seeker can find their ideal role and every company can discover perfect matches for their teams. We envision a future where career growth is accessible to all.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Features Section */}
+            <section className="py-20 bg-gradient-to-br from-emerald-900/10 via-gray-900/10 to-black/10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+                        <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                            Cutting-Edge Features
+                        </span>
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {features.map((feature, index) => {
+                            const Icon = feature.icon;
+                            return (
+                                <div key={index} className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-900/20 via-gray-900/20 to-black/20 p-8 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/20">
+                                    <div className="relative z-10">
+                                        <div className="bg-emerald-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
+                                            <Icon className="w-6 h-6 text-emerald-400" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                                        <p className="text-gray-300">{feature.description}</p>
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/10 to-emerald-900/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+                        <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                            Success Stories
+                        </span>
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {testimonials.map((testimonial, index) => (
+                            <div key={index} className="bg-gradient-to-br from-gray-800/50 via-gray-900/50 to-black/50 p-8 rounded-2xl backdrop-blur-sm">
+                                <p className="text-gray-300 text-lg italic mb-6">"{testimonial.quote}"</p>
+                                <div>
+                                    <p className="text-white font-medium">{testimonial.author}</p>
+                                    <p className="text-emerald-400">{testimonial.position}</p>
+                                    <p className="text-gray-400 text-sm">{testimonial.company}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Technology Section */}
+            <section className="py-20 bg-gradient-to-br from-emerald-900/10 via-gray-900/10 to-black/10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
+                        <span className="bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+                            Powered by Innovation
+                        </span>
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-gradient-to-br from-gray-800/30 via-gray-900/30 to-black/30 p-8 rounded-2xl backdrop-blur-sm">
+                            <Zap className="w-12 h-12 text-emerald-400 mb-6" />
+                            <h3 className="text-xl font-bold text-white mb-4">Advanced AI Technology</h3>
+                            <p className="text-gray-300">
+                                Our platform leverages state-of-the-art artificial intelligence and machine learning algorithms to provide personalized job recommendations and optimize your applications.
+                            </p>
+                        </div>
+                        <div className="bg-gradient-to-br from-gray-800/30 via-gray-900/30 to-black/30 p-8 rounded-2xl backdrop-blur-sm">
+                            <Shield className="w-12 h-12 text-emerald-400 mb-6" />
+                            <h3 className="text-xl font-bold text-white mb-4">Data Security</h3>
+                            <p className="text-gray-300">
+                                Your privacy and data security are our top priorities. We employ enterprise-grade encryption and security measures to protect your information.
+                            </p>
+                        </div>
+                        <div className="bg-gradient-to-br from-gray-800/30 via-gray-900/30 to-black/30 p-8 rounded-2xl backdrop-blur-sm">
+                            <Globe className="w-12 h-12 text-emerald-400 mb-6" />
+                            <h3 className="text-xl font-bold text-white mb-4">Global Network</h3>
+                            <p className="text-gray-300">
+                                Connect with opportunities worldwide through our extensive network of employers and recruitment partners across various industries and locations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* Call to Action */}
+            <section className="py-20">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                        Ready to Transform Your Career?
+                    </h2>
+                    <p className="text-gray-300 text-lg mb-8">
+                        Join thousands of successful professionals who have already discovered the power of AI-driven job search with Arrow Jobs.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                            Get Started Now <ArrowRight className="w-5 h-5" />
+                        </button>
+                        <button className="bg-transparent border-2 border-emerald-600 text-emerald-400 hover:bg-emerald-600/10 px-8 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2">
+                            Schedule Demo
+                        </button>
+                    </div>
+
+                    {/* Contact Information */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                        <div className="bg-gradient-to-br from-emerald-900/20 via-gray-900/20 to-black/20 p-6 rounded-xl backdrop-blur-sm">
+                            <div className="flex items-center justify-center gap-3 text-emerald-400 mb-4">
+                                <Phone className="w-5 h-5" />
+                                <span className="font-medium">Contact Support</span>
+                            </div>
+                            <p className="text-gray-300">+1 (888) 123-4567</p>
+                            <p className="text-gray-400 text-sm">Available 24/7</p>
+                        </div>
+                        <div className="bg-gradient-to-br from-emerald-900/20 via-gray-900/20 to-black/20 p-6 rounded-xl backdrop-blur-sm">
+                            <div className="flex items-center justify-center gap-3 text-emerald-400 mb-4">
+                                <Mail className="w-5 h-5" />
+                                <span className="font-medium">Email Us</span>
+                            </div>
+                            <p className="text-gray-300">support@arrowjobs.com</p>
+                            <p className="text-gray-400 text-sm">We'll respond within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer Section */}
+
         </div>
     );
 };
