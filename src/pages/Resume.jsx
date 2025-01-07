@@ -19,7 +19,7 @@ const ResumeEditor = () => {
                     </div>
 
                     <div className="w-1/2 sm:w-2/3 lg:w-1/3">
-                        <div className="relative">
+                        <div className="relative bg-black rounded-xl">
                             <motion.div
                                 animate={{
                                     scale: [1, 1],
@@ -28,7 +28,7 @@ const ResumeEditor = () => {
                                 transition={{ duration: 3, repeat: Infinity }}
                                 className="absolute inset-0 bg-emerald-100 blur-3xl"
                             ></motion.div>
-                            <div className="relative bg-gray-900 p-4 sm:p-6 rounded-lg border border-emerald-500/30">
+                            <div className="relative bg-gray-900 p-4 sm:p-6 rounded-xl border border-emerald-500/30">
                                 <pre className="text-emerald-400 font-mono text-lg sm:text-2xl">
                                     <Typewriter
                                         options={{

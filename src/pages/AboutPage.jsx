@@ -53,7 +53,7 @@ const AboutPage = () => {
             <header className="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[80vh] 2xl:min-h-[65vh] : flex items-center justify-center overflow-hidden ">
                 {/* Animated Grid Background */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute inset-0 bg-slate-950">
+                    <div className="absolute inset-0 bg-gray-900">
                         <div className="absolute inset-0 ">
                             {/* Glowing Orbs */}
                             <div className="absolute top-[20%] left-[20%] w-34 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
