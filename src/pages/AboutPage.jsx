@@ -50,14 +50,14 @@ const AboutPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             {/* Hero Section with Particle Effect Background */}
-            <header className="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[80vh] 2xl:min-h-[65vh] : flex items-center justify-center overflow-hidden bg-gradient-to-r from-emerald-900 via-black to-emerald-900">
+            <header className="relative min-h-[60vh] md:min-h-[70vh] lg:min-h-[80vh] xl:min-h-[80vh] 2xl:min-h-[65vh] : flex items-center justify-center overflow-hidden ">
                 {/* Animated Grid Background */}
                 <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1010104d_1px,transparent_1px),linear-gradient(to_bottom,#1010104d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]">
-                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-emerald-900/10">
+                    <div className="absolute inset-0 bg-slate-950">
+                        <div className="absolute inset-0 ">
                             {/* Glowing Orbs */}
-                            <div className="absolute top-[20%] left-[30%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
-                            <div className="absolute top-[60%] left-[60%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
+                            <div className="absolute top-[20%] left-[20%] w-34 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
+                            <div className="absolute top-[60%] left-[80%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
 
 
                         </div>

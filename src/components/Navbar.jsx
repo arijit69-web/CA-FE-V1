@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
+import { BsStars } from "react-icons/bs";
 import { AuthContext } from "../context/AuthProvider";
 import './Banner.css';
 
@@ -45,7 +46,7 @@ const Navbar = () => {
         </div>
 
         {/* Main Navigation - Center */}
-        <ul className="hidden md:flex items-center gap-10 mx-auto ml-48 md:ml-32  ">
+        <ul className="hidden md:flex items-center gap-10 mx-auto ml-48 md:ml-32">
           {mainNavItems.map(({ path, title }) => (
             <li key={path} className="text-base text-white">
               <NavLink
@@ -56,12 +57,25 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
+
+          {/* AI Resume */}
+
         </ul>
 
         {/* Auth Navigation - Right */}
         <ul className="hidden md:flex items-center gap-6">
+          <li className="flex relative justify-center right-20 items-center ml-60">
+            <NavLink
+              to="/resume"
+              className="flex items-center gap-2 text-white px-3 py-2 border-2 border-emerald-700 rounded-xl hover:bg-emerald-600 hover:text-white transition duration-200"
+            >
+              AI Resume
+              <BsStars />
+
+            </NavLink>
+          </li>
           {authNavItems.map(({ path, title }) => (
-            <li key={path} className="text-base text-white ">
+            <li key={path} className="text-base text-white">
               <NavLink
                 to={path}
                 className={({ isActive }) => (isActive ? "active" : "")}
@@ -87,7 +101,31 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`px-4 bg-black py-5 rounded-sm ${isMenuOpen ? "" : "hidden"}`}>
         <ul className="space-y-2">
-          {[...mainNavItems, ...authNavItems].map(({ path, title }) => (
+          {mainNavItems.map(({ path, title }) => (
+            <li key={path} className="text-base text-white">
+              <NavLink
+                onClick={handleMenuToggler}
+                to={path}
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                {title}
+              </NavLink>
+            </li>
+          ))}
+
+          {/* AI Resume for Mobile */}
+          <li>
+            <NavLink
+              to="/resume"
+              onClick={handleMenuToggler}
+              className="flex items-center gap-2 text-white   "
+            >
+
+              AI Resume
+            </NavLink>
+          </li>
+
+          {authNavItems.map(({ path, title }) => (
             <li key={path} className="text-base text-white">
               <NavLink
                 onClick={handleMenuToggler}

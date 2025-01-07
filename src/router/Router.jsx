@@ -13,6 +13,7 @@ import Banner from "../components/Banner";
 import Signup from "../pages/Signup";
 import AboutPage from "../pages/AboutPage";
 import NotFound from "../pages/NotFound";
+import Resume from "../pages/Resume";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         element: <AboutPage />
       },
       {
+        path: "/resume",
+        element: <Resume />
+      },
+      {
         path: "/login",
         element: <Login />,
       },
@@ -43,6 +48,7 @@ const router = createBrowserRouter([
         path: "*",
         element: <NotFound />,
       }
+
 
     ],
   },
