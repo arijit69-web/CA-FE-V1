@@ -14,6 +14,7 @@ import Signup from "../pages/Signup";
 import AboutPage from "../pages/AboutPage";
 import NotFound from "../pages/NotFound";
 import Resume from "../pages/Resume";
+import CareersPage from "../pages/CareersPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />
+      },
+      {
+        path: "/careers",
+        element: <CareersPage />
       },
       {
         path: "*",

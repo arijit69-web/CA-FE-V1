@@ -45,7 +45,7 @@ const Footer = () => {
                                 { name: "Pricing", path: "" },
                                 { name: "Explore", path: "/jobs" },
                                 { name: "Team", path: "" },
-                                { name: "Careers", path: "" },
+                                { name: "Careers", path: "/careers" },
                                 { name: "Privacy Policy", path: "" },
                             ].map((item) => (
                                 <li key={item.name}>

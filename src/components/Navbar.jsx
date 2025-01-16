@@ -26,7 +26,8 @@ const Navbar = () => {
   const mainNavItems = [
     { path: "/", title: "Home" },
     { path: "/jobs", title: "Jobs" },
-    { path: "/about", title: "About" }
+    { path: "/about", title: "About" },
+    { path: "/careers", title: "Careers" }
   ];
 
   const authNavItems = [

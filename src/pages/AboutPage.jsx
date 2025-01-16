@@ -1,7 +1,13 @@
 import React from 'react';
 import { ArrowRight, Users, Briefcase, Trophy, Target, ChartBar, Globe, Shield, Clock, Zap, Phone, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Navigate, redirect, useNavigate } from 'react-router-dom';
 
 const AboutPage = () => {
+    const navigate = useNavigate();
+    const handleGetStarted = () => {
+        navigate('/jobs');
+    }
     const stats = [
         { number: "15K+", label: "Active Users", icon: Users },
         { number: "8K+", label: "Partner Companies", icon: Briefcase },
@@ -46,7 +52,7 @@ const AboutPage = () => {
             company: "Global Solutions Ltd."
         }
     ];
-
+    let url = "https://images.unsplash.com/photo-1656077217715-bdaeb06bd01f?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
             {/* Hero Section with Particle Effect Background */}
@@ -54,13 +60,15 @@ const AboutPage = () => {
                 {/* Animated Grid Background */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute inset-0 bg-gray-900">
-                        <div className="absolute inset-0 ">
-                            {/* Glowing Orbs */}
-                            <div className="absolute top-[20%] left-[20%] w-34 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse"></div>
-                            <div className="absolute top-[60%] left-[80%] w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-white rounded-full filter blur-3xl animate-pulse delay-700"></div>
+                        <motion.img
+                            src={url} // Replace with your illustration/image URL
+                            alt="Team collaboration"
+                            className="absolute w-full h-full object-cover"
+                            initial={{ scale: 1.3 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 3, ease: 'easeOut' }}
+                        />
 
-
-                        </div>
                     </div>
                 </div>
 
@@ -76,7 +84,7 @@ const AboutPage = () => {
                         Pioneering the future of job search with AI-driven solutions and intelligent career guidance
                     </p>
                     <div className="mt-8">
-                        <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+                        <button onClick={handleGetStarted} className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
                             Get Started <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
                         </button>
                     </div>
