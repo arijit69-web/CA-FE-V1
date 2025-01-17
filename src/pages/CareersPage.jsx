@@ -17,6 +17,7 @@ const CareersPage = () => {
         'Engineering & Data': [
             {
                 title: 'Frontend Engineer (Internship)',
+                description: " ₹ 25k – ₹ 75k • | Remote • Gurgugram | 6 months of exp | Internship",
                 about: "We're seeking an exceptional frontend engineer who can architect and build. We're not looking for specialists, rather driven problem solvers who can move seamlessly between crafting intuitive UIs and engineering browser capabilities to their limits. You'll work directly with the founders, tackling challenges to make tools people can't live without.",
                 responsibilities: [
                     "Create fluid, responsive interfaces that make complex AI capabilities feel intuitive",
@@ -46,6 +47,8 @@ const CareersPage = () => {
             {
                 title: 'Backend Developer',
                 about: "We are looking for a backend developer who thrives in tackling challenging problems, building scalable systems, and ensuring seamless integration across complex architectures. You will work with cutting-edge technologies to power user experiences.",
+                description: " ₹ 45k – ₹ 90k • | Remote • Gurgugram | +1 years of exp | Full-Time",
+
                 responsibilities: [
                     "Develop and maintain scalable backend systems using Node.js and frameworks like Express.js or Nest.js",
                     "Design and implement robust APIs (RESTful and GraphQL)",
@@ -68,6 +71,8 @@ const CareersPage = () => {
             },
             {
                 title: 'Data Analyst',
+                description: " ₹ 30k – ₹ 75k • | Remote • Gurgugram | +1 years of exp | Full-Time",
+
                 about: "As a Data Analyst, you will transform complex data into actionable insights, helping the team make data-driven decisions. This role combines statistical analysis with creative visualization to communicate impactful results.",
                 responsibilities: [
                     "Analyze large datasets to identify trends, patterns, and insights",
@@ -93,6 +98,8 @@ const CareersPage = () => {
         'Product & Design': [
             {
                 title: 'UX/UI Engineer',
+                description: " ₹ 10k – ₹ 45k • | Remote • Gurgugram | 6 months of exp | Full-Time",
+
                 about: "Join us as a UX/UI Engineer to create intuitive and delightful user experiences. You'll collaborate with cross-functional teams to turn user needs into engaging designs and seamless interactions.",
                 responsibilities: [
                     "Design user-centered interfaces and experiences",
@@ -123,13 +130,13 @@ const CareersPage = () => {
         setSelectedRole(role);
         setModalOpen(true);
     };
-    let url = "https://wallpapercave.com/wp/wp2022128.jpg"
+    let url = '/workk.jpg'
     return (
         <div className="min-h-screen bg-gray-950 text-gray-100">
             {/* Hero Section */}
-            <div className="relative h-[70vh] overflow-hidden">
+            <div className="relative top-14 h-[70vh] overflow-hidden">
                 <motion.img
-                    src='/bg.jpg' // Replace with your illustration/image URL
+                    src={url} // Replace with your illustration/image URL
                     alt="Team collaboration"
                     className="absolute w-full h-full object-cover"
                     initial={{ scale: 1.3 }}
@@ -196,6 +203,7 @@ const CareersPage = () => {
                                             <h3 className="text-lg font-semibold mb-4">
                                                 {role.title}
                                             </h3>
+                                            <p className="text-md  mb-4">{role.description}</p>
                                         </div>
                                     ))
                                 ) : (
