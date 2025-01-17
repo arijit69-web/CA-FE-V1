@@ -222,7 +222,7 @@ const CareersPage = () => {
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.8, opacity: 0 }}
-                        className="bg-gray-900 rounded-xl w-[80%] h-[80vh] relative overflow-hidden flex flex-col"
+                        className="bg-gray-900 rounded-xl w-[100%] h-[80vh] sm:md:lg:xl:w-[80%] sm:md:lg:xl:h-[80vh] relative overflow-hidden flex flex-col"
                     >
                         <div className="p-6 border-b border-gray-800 flex justify-between items-center">
                             <h2 className="text-2xl font-bold">{selectedRole.title}</h2>
