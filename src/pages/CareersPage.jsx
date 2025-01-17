@@ -164,7 +164,7 @@ const CareersPage = () => {
             </div>
 
             {/* Search and Filter Section */}
-            <section className="py-12 px-4 bg-gray-950 h-[80vh]">
+            <section className="py-12 px-4 bg-gray-950 h-[80vh] overflow-auto">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-12 gap-6">
                         {/* Left Sidebar */}
