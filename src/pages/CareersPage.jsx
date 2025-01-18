@@ -130,7 +130,7 @@ const CareersPage = () => {
         setSelectedRole(role);
         setModalOpen(true);
     };
-    let url = '/workk.jpg'
+    let url = 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     return (
         <div className="min-h-screen bg-gray-950 text-gray-100">
             {/* Hero Section */}
@@ -164,7 +164,7 @@ const CareersPage = () => {
             </div>
 
             {/* Search and Filter Section */}
-            <section className="py-12 px-4 bg-gray-950 h-[80vh] overflow-auto">
+            <section className="py-14 px-4 bg-gray-950 h-[80vh] overflow-auto">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-12 gap-6">
                         {/* Left Sidebar */}
